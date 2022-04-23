@@ -1,0 +1,35 @@
+server:
+  port: 8101
+  servlet:
+    session:
+      cookie:
+        name: CLIENTSESSIONMEMBER
+spring:
+  application:
+    name: order-service
+  thymeleaf:
+    prefix: classpath:/templates/
+  main:
+    allow-bean-definition-overriding: true
+
+security:
+  oauth2:
+    client:
+      client-id: MemberSystem
+      client-secret: 12345
+      access-token-uri: http://localhost:8202/oauth/token
+      user-authorization-uri: http://localhost:8202/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:8202/user/me
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+logging:
+  level:
+    root: debug

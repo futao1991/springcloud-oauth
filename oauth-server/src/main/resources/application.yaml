@@ -1,0 +1,27 @@
+server:
+  port: 8202
+  servlet:
+    session:
+      cookie:
+        name: UISESSIONMEMBER
+
+spring:
+  application:
+    name: oauth-server
+  datasource:
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: 786679057
+      driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+logging:
+  level:
+    root: debug
+
